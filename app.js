@@ -5,7 +5,6 @@ class Book {
   }
 }
 
-// Using local storage
 class Store {
   static getBooks() {
     let books;
@@ -24,11 +23,11 @@ class Store {
     localStorage.setItem('books', JSON.stringify(books));
   }
 
-  static removeBook(title) {
+  static removeBook(author) {
     const books = Store.getBooks();
 
     books.forEach((book, index) => {
-      if (book.title === title) {
+      if (book.author === author) {
         books.splice(index, 1);
       }
     });
@@ -37,12 +36,11 @@ class Store {
   }
 }
 
-// Show books in UI
-class Interactions {
+class showBooks {
   static displayBooks() {
     const books = Store.getBooks();
 
-    books.forEach((book) => Interactions.addBookToList(book));
+    books.forEach((book) => showBooks.addBookToList(book));
   }
 
   static addBookToList(book) {
@@ -50,8 +48,8 @@ class Interactions {
     const row = document.createElement('tr');
 
     row.innerHTML = `
-        <td>${book.author}</td>
         <td>${book.title}</td>
+        <td> by ${book.author}</td>
         <td><button class="delete">Remove book</button></td>
       `;
 
@@ -70,10 +68,7 @@ class Interactions {
   }
 }
 
-// Showing a book
-document.addEventListener('DOMContentLoaded', Interactions.displayBooks);
-
-// Adding a book
+document.addEventListener('DOMContentLoaded', showBooks.displayBooks);
 
 document.querySelector('#form').addEventListener('submit', (e) => {
   e.preventDefault();
@@ -83,15 +78,15 @@ document.querySelector('#form').addEventListener('submit', (e) => {
 
   const book = new Book(title, author);
 
-  Interactions.addBookToList(book);
+  showBooks.addBookToList(book);
   Store.addBook(book);
-  Interactions.clearFields();
+  showBooks.clearFields();
 });
 
-// Delete book 
 document.querySelector('#list').addEventListener('click', (e) => {
-  Interactions.deleteBook(e.target);
 
-  // Delete book from local storage
+  showBooks.deleteBook(e.target);
+
+
   Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
 });

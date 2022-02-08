@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
     <title>Awesome Books</title>
 </head>
 <body>
@@ -13,9 +14,9 @@
 		</header>
 		<table>
 			<thead>
-				<tr>
-				<th>Author</th>
+				<tr class="line">
 				<th>Title</th>
+				<th>Author</th>
 				<th></th>
 				</tr>
 			</thead>
@@ -24,14 +25,14 @@
 		<hr>
 		<form id="form">
 			<div class="form-group">
-				<label for="title">Title</label>
-				<input type="text" id="title" required>
+				<label for="title"></label>
+				<input type="text" id="title" required placeholder="Title">
 			</div>
 			<div class="form-group">
-				<label for="author">Author</label>
-				<input type="text" id="author" required>
+				<label for="author"></label>
+				<input type="text" id="author" required placeholder="Author">
 			</div>
-			<input type="submit" value="Add Book">
+			<input type="submit" value="Add" class="submit">
 		</form>
 	</div>
 	<script src="app.js"></script>
