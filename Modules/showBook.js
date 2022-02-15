@@ -1,5 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable no-unused-vars */
+/* eslint import/no-unresolved: 2 */
 import { Book } from './book.js';
 import { Store } from './store.js';
 
