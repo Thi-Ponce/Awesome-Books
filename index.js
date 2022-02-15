@@ -1,100 +1,10 @@
 /* eslint-disable max-classes-per-file */
-// class Book {
-//   constructor(title, author) {
-//     this.title = title;
-//     this.author = author;
-//   }
-// }
 import {Book} from './modules/book.js'
-
-// class Store {
-//   static getBooks() {
-//     let books;
-//     if (localStorage.getItem('books') === null) {
-//       books = [];
-//     } else {
-//       books = JSON.parse(localStorage.getItem('books'));
-//     }
-
-//     return books;
-//   }
-
-//   static addBook(book) {
-//     const books = Store.getBooks();
-//     books.push(book);
-//     localStorage.setItem('books', JSON.stringify(books));
-//   }
-
-//   static removeBook(author) {
-//     const books = Store.getBooks();
-
-//     books.forEach((book, index) => {
-//       if (book.author === author) {
-//         books.splice(index, 1);
-//       }
-//     });
-
-//     localStorage.setItem('books', JSON.stringify(books));
-//   }
-// }
 import {Store} from './modules/store.js'
-
-// class showBooks {
-//   static displayBooks() {
-//     const books = Store.getBooks();
-
-//     books.forEach((book) => showBooks.addBookToList(book));
-//   }
-
-//   static addBookToList(book) {
-//     const list = document.querySelector('#list');
-//     const row = document.createElement('tr');
-
-//     row.innerHTML = `
-//         <td>${book.title} by </td>
-//         <td>${book.author}</td>
-//         <td><button class="delete">Remove book</button></td>
-//       `;
-
-//     list.appendChild(row);
-//   }
-
-//   static deleteBook(el) {
-//     if (el.classList.contains('delete')) {
-//       el.parentElement.parentElement.remove();
-//     }
-//   }
-
-//   static clearFields() {
-//     document.querySelector('#title').value = '';
-//     document.querySelector('#author').value = '';
-//   }
-// }
-
 import { showBooks } from './modules/showBook.js'
+import {showAdd, showAddBook, showBookList, showList, showContact, showContactPage} from './modules/onClick.js'
 
 document.addEventListener('DOMContentLoaded', showBooks.displayBooks);
-
-// const showBookList = document.getElementById('nav-list');
-// const showAddBook = document.getElementById('nav-add');
-// const showContact = document.getElementById('nav-contact');
-
-// const showList = () => {
-//   document.getElementById('book-list').style.display = 'flex';
-//   document.getElementById('add-new').style.display = 'none';
-//   document.getElementById('contact').style.display = 'none';
-// }
-// const showAdd = () => {
-//   document.getElementById('book-list').style.display = 'none';
-//   document.getElementById('add-new').style.display = 'flex';
-//   document.getElementById('contact').style.display = 'none';
-// }
-// const showContactPage = () => {
-//   document.getElementById('book-list').style.display = 'none';
-//   document.getElementById('add-new').style.display = 'none';
-//   document.getElementById('contact').style.display = 'flex';
-// }
-import {showAdd, showAddBook, showBookList, showList, showContact, showContactPage} from './modules/onClick.js'
 
 window.addEventListener('load', () => {
   showList();
