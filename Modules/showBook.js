@@ -1,6 +1,8 @@
-import { Store } from './Store.js'
+import { Book } from "./book.js";
+import { Store } from "./store.js";
 
- export class showBooks {
+
+export class showBooks {
     static displayBooks() {
       const books = Store.getBooks();
   
