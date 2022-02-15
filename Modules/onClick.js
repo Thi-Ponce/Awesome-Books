@@ -6,16 +6,16 @@ export const showList = () => {
   document.getElementById('book-list').style.display = 'flex';
   document.getElementById('add-new').style.display = 'none';
   document.getElementById('contact').style.display = 'none';
-}
+};
 
 export const showAdd = () => {
   document.getElementById('book-list').style.display = 'none';
   document.getElementById('add-new').style.display = 'flex';
   document.getElementById('contact').style.display = 'none';
-}
+};
 
 export const showContactPage = () => {
   document.getElementById('book-list').style.display = 'none';
   document.getElementById('add-new').style.display = 'none';
   document.getElementById('contact').style.display = 'flex';
-}
+};

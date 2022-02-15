@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 export class Store {
   static getBooks() {
     let books;
@@ -6,25 +7,25 @@ export class Store {
     } else {
       books = JSON.parse(localStorage.getItem('books'));
     }
-  
+
     return books;
   }
-  
+
   static addBook(book) {
     const books = Store.getBooks();
     books.push(book);
     localStorage.setItem('books', JSON.stringify(books));
   }
-  
+
   static removeBook(author) {
     const books = Store.getBooks();
-  
+
     books.forEach((book, index) => {
       if (book.author === author) {
         books.splice(index, 1);
       }
     });
-  
+
     localStorage.setItem('books', JSON.stringify(books));
   }
 }

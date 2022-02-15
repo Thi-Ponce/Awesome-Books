@@ -1,8 +1,10 @@
 /* eslint-disable max-classes-per-file */
-import {Book} from './modules/book.js'
-import {Store} from './modules/store.js'
-import { showBooks } from './modules/showBook.js'
-import {showAdd, showAddBook, showBookList, showList, showContact, showContactPage} from './modules/onClick.js'
+import { Book } from './modules/book.js';
+import { Store } from './modules/store.js';
+import { showBooks } from './modules/showBook.js';
+import {
+  showAdd, showAddBook, showBookList, showList, showContact, showContactPage,
+} from './modules/onClick.js';
 
 document.addEventListener('DOMContentLoaded', showBooks.displayBooks);
 
