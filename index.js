@@ -6,7 +6,7 @@ import { showBooks } from './modules/showBook.js';
 import {
   showAdd, showAddBook, showBookList, showList, showContact, showContactPage,
 } from './modules/onClick.js';
-import { current } from './modules/date.js'
+import { current } from './modules/date.js';
 
 document.addEventListener('DOMContentLoaded', showBooks.displayBooks);
 
